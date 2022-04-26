@@ -1,11 +1,11 @@
 
 .Template{
 width: 400px;
-height: 500px;
-padding:0 20px;
+padding:20px;
 box-sizing: border-box;
 margin:60px auto 0;
 background-image:linear-gradient(#d9a7c7, #fffcdc);
+
 
 .title{
     // background: #d9a7c7;
@@ -14,8 +14,9 @@ background-image:linear-gradient(#d9a7c7, #fffcdc);
     align-items: center;
     justify-content:center;
     padding:20px 0;
-    color:#6f00ff;
+    color:#fff;
     font-weight: 700;
+    
 }
 .content{
     background: #fff;

@@ -1,16 +1,20 @@
-import { React } from "react";
-import { FiCheckSquare } from "react-icons/fi";
+import { useState } from "react";
+import { MdOutlineCheckBoxOutlineBlank } from "react-icons/md";
 import "./ListItem.scss";
 
-const ListItem = () => {
+const ListItem = ({ menu }) => {
+  const { text } = menu;
+  const [value, setValue] = useState(0);
   return (
     <div className="ListItem">
-      <div className="checkbox" />
-      <FiCheckSquare />
-      <div className="text">양파</div>
+      <div className="checkbox">
+        <MdOutlineCheckBoxOutlineBlank />
+      </div>
+      <div className="text">{text}</div>
       <div className="btn">
-        <button>+</button>
-        <button>-</button>
+        <button onClick={() => setValue(value - 1)}>-</button>
+        <p>{value}</p>
+        <button onClick={() => setValue(value + 1)}>+</button>
       </div>
     </div>
   );
