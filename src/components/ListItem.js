@@ -13,8 +13,9 @@ const ListItem = ({ menu, onToggle }) => {
     <div className="ListItem">
       <div className={cn("checkbox", { checked })} onClick={() => onToggle(id)}>
         {checked ? <MdOutlineCheckBox /> : <MdOutlineCheckBoxOutlineBlank />}
+        <div className="text">{text}</div>
       </div>
-      <div className="text">{text}</div>
+
       <div className="btn">
         <button onClick={() => setValue(value - 1)}>-</button>
         <p>{value}</p>
