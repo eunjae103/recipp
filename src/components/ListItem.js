@@ -1,14 +1,18 @@
 import { useState } from "react";
-import { MdOutlineCheckBoxOutlineBlank } from "react-icons/md";
+import {
+  MdOutlineCheckBox,
+  MdOutlineCheckBoxOutlineBlank,
+} from "react-icons/md";
 import "./ListItem.scss";
+import cn from "classnames";
 
-const ListItem = ({ menu }) => {
-  const { text } = menu;
+const ListItem = ({ menu, onToggle }) => {
+  const { id, text, checked } = menu;
   const [value, setValue] = useState(0);
   return (
     <div className="ListItem">
-      <div className="checkbox">
-        <MdOutlineCheckBoxOutlineBlank />
+      <div className={cn("checkbox", { checked })} onClick={() => onToggle(id)}>
+        {checked ? <MdOutlineCheckBox /> : <MdOutlineCheckBoxOutlineBlank />}
       </div>
       <div className="text">{text}</div>
       <div className="btn">
